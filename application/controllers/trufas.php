@@ -22,7 +22,7 @@ class Trufas extends CI_Controller
 
     public function info($id = null)
     {
-        print_r($this->mtrufas->get($id));
+        print_r($this->model_trufas->get($id));
     }
     public function cadastrar ()
     {
@@ -84,12 +84,9 @@ class Trufas extends CI_Controller
       }
 
       public function excluir ($id = null){
-          if ($this->model_trufas->excluir($id)){
+          $this->model_trufas->excluir($id);
             redirect('trufas');
           }
-          echo "Fodeu]";
-        }
-
 }
 
 
